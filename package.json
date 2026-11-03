@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/corey-miles/corey-miles.github.io#readme",
   "dependencies": {
-    "express": "^5.3.0"
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "multer": "^2.5.0"
   }
 }

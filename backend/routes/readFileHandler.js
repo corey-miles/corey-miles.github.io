@@ -1,5 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
+
+const { Buffer } = require('buffer');
+
+const upload = multer({ storage: multer.memoryStorage() });
 
 // POST handler to read file
 router.post('/readFile', upload.single('file'), (req, res) => {
@@ -19,3 +24,5 @@ router.post('/readFile', upload.single('file'), (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+module.exports = [router];

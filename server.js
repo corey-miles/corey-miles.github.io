@@ -1,35 +1,16 @@
 const express = require("express");
 const multer = require("multer");
 const cors = require("cors");
+const readFileRouter = require('./backend/routes/readFileHandler');
 
 const path = require("path");
 const app = express();
 const PORT = 3000;
 
-const { Buffer } = require("buffer");
-
 app.use(cors()); // Allow cross-origin requests from frontend
+app.use(express.json()); // Middleware to parse JSON bodies
 
-const upload = multer({ storage: multer.memoryStorage() });
-
-// Route to receive and process file data
-app.post("/process-file", upload.single("file"), (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({ error: "No file uploaded" });
-    }
-
-    const fileBuffer = Buffer.from(req.file.buffer);
-
-    res.json({
-      filename: req.file.originalname,
-      size: req.file.size,
-      content: fileBuffer.toString("hex"),
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+app.use('/readFile', readFileRouter); // Reads file as hex
 
 // Serve all static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));

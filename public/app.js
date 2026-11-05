@@ -14,7 +14,7 @@ async function readFile() {
 
   try {
     // Send the file payload to the Node.js backend server
-    const response = await fetch("/process-file", {
+    const response = await fetch("/readFile", {
       method: "POST",
       body: formData,
     });

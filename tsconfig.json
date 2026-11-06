@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "allowJs": false
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.js", "node_modules"]
+}

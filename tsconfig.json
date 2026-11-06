@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
-    "allowJs": false
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["**/*.js", "node_modules"]
 }

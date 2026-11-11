@@ -1,5 +1,7 @@
 async function readFile(): Promise<void> {
-  const fileInput = document.getElementById("fileInput") as HTMLInputElement | null;
+  const fileInput = document.getElementById(
+    "fileInput",
+  ) as HTMLInputElement | null;
   const fileContentDiv = document.getElementById("fileContent");
 
   if (!fileInput || !fileContentDiv) {
@@ -46,8 +48,5 @@ async function readFile(): Promise<void> {
   }
 }
 
-interface Window {
-  readFile: typeof readFile;
-}
-
-window.readFile = readFile;
+(window as unknown as Window & { readFile: typeof readFile }).readFile =
+  readFile;

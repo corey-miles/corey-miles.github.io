@@ -7,11 +7,8 @@
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
-    "skipDefaultLibCheck": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.js", "node_modules"]
+  "exclude": ["node_modules"]
 }

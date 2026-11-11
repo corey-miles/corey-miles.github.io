@@ -2,8 +2,11 @@
   "name": "corey-miles.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/backend/server.js",
   "scripts": {
+    "build": "tsc && node scripts/copy-static-files.cjs",
+    "start": "node dist/backend/server.js",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +24,13 @@
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.3.0",
-    "multer": "^2.5.0"
+    "multer": "^2.5.0",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.10.1"
   }
 }
